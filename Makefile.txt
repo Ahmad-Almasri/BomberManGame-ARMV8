@@ -1,0 +1,50 @@
+myProg:	main.o initialize.o display.o askUser.o logic.o loadValue.o log.o topDoc.o
+	gcc main.o initialize.o display.o askUser.o logic.o loadValue.o log.o topDoc.o  -o exAll
+
+main.o:	main.s
+	as main.s -o main.o
+
+main.s: main.asm
+	m4 main.asm > main.s
+
+initialize.o: initialize.s
+	as initialize.s -o initialize.o
+
+initialize.s: initialize.asm
+	m4 initialize.asm > initialize.s
+
+display.o: display.s
+	as display.s -o display.o
+
+display.s: display.asm
+	m4 display.asm > display.s
+
+askUser.o: askUser.s
+	as askUser.s -o askUser.o
+
+askUser.s: askUser.asm
+	m4 askUser.asm > askUser.s
+
+logic.o: logic.s
+	as logic.s -o logic.o
+
+logic.s: logic.asm
+	m4 logic.asm > logic.s
+
+loadValue.o: loadValue.s
+	as loadValue.s -o loadValue.o
+
+loadValue.s: loadValue.asm
+	m4 loadValue.asm > loadValue.s
+
+log.o: log.s
+	as log.s -o log.o
+
+log.s: log.asm
+	m4 log.asm > log.s
+
+topDoc.o: topDoc.s
+	as topDoc.s -o topDoc.o
+
+topDoc.s: topDoc.asm
+	m4 topDoc.asm > topDoc.s

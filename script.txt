@@ -1,0 +1,21 @@
+#! /bin/sh
+
+m4 main.asm > main.s
+m4 initialize.asm > initialize.s
+m4 display.asm > display.s
+m4 askUser.asm > askUser.s
+m4 logic.asm > logic.s
+m4 loadValue.asm > loadValue.s
+m4 log.asm > log.s
+m4 topDoc.asm > topDoc.s
+
+as main.s -o main.o
+as initialize.s -o initialize.o
+as display.s -o display.o
+as askUser.s -o askUser.o
+as logic.s -o logic.o
+as loadValue.s -o loadValue.o
+as log.s -o log.o
+as topDoc.s -o topDoc.o
+
+gcc main.o initialize.o display.o askUser.o logic.o loadValue.o log.o topDoc.o -g -o exAll
